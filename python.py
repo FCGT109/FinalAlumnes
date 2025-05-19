@@ -9,6 +9,9 @@ def copia_frase(frase, vegades, separador=None):
     >>> copia_frase('No em cal copiar', 4, '!!!')
     'No em cal copiar!!!No em cal copiar!!!No em cal copiar!!!No em cal copiar'
     """
+    a = vegades * (frase+separador)
+    separar = len(a)-len(separador)
+    return a[:separar]
 
 def copia_posicio_senar(llista):
     """
@@ -20,7 +23,16 @@ def copia_posicio_senar(llista):
     >>> copia_posicio_senar([2,2,3,9,1])
     [2,2,2,3,9,9,1]
     """
-
+    llista_nova = []
+    while len(llista) >= 2:
+        llista_nova.append(llista[0])
+        llista_nova.append(llista[1])
+        llista_nova.append(llista[1])
+        llista = llista[2:]
+            
+    llista_nova.append(llista[0])
+    return llista_nova    
+copia_posicio_senar([2,2,3,9,1])
 def copia_amb_canvis(mot1, diccionari):
     """
     Copia una cadena de caràcters canviant-ne les claus del diccionari pels
