@@ -48,9 +48,11 @@ func _physics_process(delta: float) -> void:
 		vel_rotacio -= vel_rotacio_max
 	if Input.is_action_pressed("Endavant"):
 		acceleracio = Vector2.UP.rotated(global_rotation) * accel_max
+		$Estela.emitting = true
+		$SoMotor.play()
 	else:
 		acceleracio = -velocity.normalized() * frenada
-	
+		$Estela.emitting = false
 	if pot_disparar and Input.is_action_just_pressed("Dispara"):
 		dispara()
 	
