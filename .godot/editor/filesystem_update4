@@ -1,0 +1,17 @@
+res://Scripts/nau.gd
+res://Escenes/nau.tscn
+res://Scripts/PowerUPBomba.gd
+res://Escenes/joc.tscn
+res://Escenes/explosió.tscn
+res://Escenes/meteorit.tscn
+res://Escenes/game_over.tscn
+res://Escenes/laser.tscn
+res://Escenes/marcador.tscn
+res://Escenes/power_up_bomba.tscn
+res://Escenes/power_up_vida.tscn
+res://Scripts/boto_jugar.gd
+res://Scripts/boto_sortir.gd
+res://Scripts/explosió.gd
+res://Scripts/Meteorit.gd
+res://Escenes/menu.tscn
+res://Scripts/Marcador.gd

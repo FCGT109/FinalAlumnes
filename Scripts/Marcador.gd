@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass
 
 func actualitza(nova_puntuacio: int) -> void:
-	pass
+	label.text = "%d" % [nova_puntuacio]
 
 func canvi_bombes(noves_bombes: int) -> void:
 	barra_bombes.value = noves_bombes

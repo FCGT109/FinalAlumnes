@@ -25,7 +25,9 @@ func hit(mal) -> void:
 func mor():
 	meteorit_mort.emit()
 	potser_powerup()
+	Global.escena_explosio.instantiate()
 	queue_free()
+	
 
 func potser_powerup() -> void:
 	if randi_range(1, 10) > 2:

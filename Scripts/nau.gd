@@ -62,6 +62,8 @@ func _physics_process(delta: float) -> void:
 	centre.global_rotation_degrees = 0
 
 	move_and_slide()
+	if vida <= 0:
+		get_tree().change_scene_to_file("res://Escenes/game_over.tscn")
 
 
 func esclata_bomba():
@@ -81,6 +83,8 @@ func dispara() -> void:
 	so_laser.play()
 	crea_bala(dreta.global_position)
 	crea_bala(esquerra.global_position)
+	$Timer.start()
+	pot_disparar = false
 
 func hit(mal) -> void:
 	vida -= mal
@@ -98,3 +102,7 @@ func _on_meteorit_mort() -> void:
 
 func _on_area_bomba_area_entered(area: Area2D) -> void:
 	area.mor()
+
+
+func _on_timer_timeout() -> void:
+	pot_disparar = true

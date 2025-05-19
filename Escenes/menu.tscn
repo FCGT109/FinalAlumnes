@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://ia2mdwlm3d5g"]
+
+[ext_resource type="Texture2D" uid="uid://b6tm6oxknn8tu" path="res://Imatges/Nebulosa.png" id="1_oh7y3"]
+[ext_resource type="Texture2D" path="res://Imatges/Atlas/buttonBlue.tres" id="2_1l1r7"]
+[ext_resource type="Script" uid="uid://bi8swvb7rbhgs" path="res://Scripts/boto_jugar.gd" id="3_wgnra"]
+[ext_resource type="Texture2D" path="res://Imatges/Atlas/buttonRed.tres" id="4_ggisc"]
+[ext_resource type="Script" uid="uid://wh35e7gngmmg" path="res://Scripts/boto_sortir.gd" id="5_mu2w0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nebulosa" type="Sprite2D" parent="."]
+position = Vector2(311, 234)
+texture = ExtResource("1_oh7y3")
+
+[node name="Jugar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 264.0
+offset_right = 547.0
+offset_bottom = 303.0
+texture_normal = ExtResource("2_1l1r7")
+script = ExtResource("3_wgnra")
+
+[node name="Label" type="Label" parent="Jugar"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 230.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "       JUGAR"
+
+[node name="Sortir" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 268.0
+offset_right = 865.0
+offset_bottom = 314.0
+texture_normal = ExtResource("4_ggisc")
+script = ExtResource("5_mu2w0")
+
+[node name="Label" type="Label" parent="Sortir"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "      SORTIR"
+
+[connection signal="pressed" from="Jugar" to="Jugar" method="_on_pressed"]
+[connection signal="pressed" from="Sortir" to="Sortir" method="_on_pressed"]
